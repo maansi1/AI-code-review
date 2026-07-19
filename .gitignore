@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDE files
+.idea/
+*.iml
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+nbproject/
+*.log
+
+# Project specific
+backend_output.txt
+dev_output.txt
+
+# Modules
+backend/target/
+backend/uploads/
+backend/.env
+backend/backend_output.txt
+
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.env
+frontend/.env.local
+frontend/dev_output.txt
