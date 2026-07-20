@@ -1,4 +1,4 @@
-# Redline — Frontend
+# AI Code Review — Frontend
 
 React 18 + Vite + Tailwind. Talks to the Spring Boot backend over REST/JWT.
 

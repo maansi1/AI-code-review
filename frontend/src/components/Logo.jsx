@@ -9,7 +9,7 @@ export default function Logo({ size = "default" }) {
         <path d="M7 16H11" stroke="#8895A7" strokeWidth="1.6" strokeLinecap="round" />
       </svg>
       <span className={`font-mono font-semibold tracking-tight ${textSize}`}>
-        redline
+        AI Code Review
       </span>
     </div>
   );

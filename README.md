@@ -1,4 +1,4 @@
-# Redline — AI Code Review Assistant
+# AI Code Review — Assistant
 
 Full-stack Java code review platform: paste or upload a `.java` file, get a
 scored review combining a built-in static analyzer with an OpenAI-powered AI

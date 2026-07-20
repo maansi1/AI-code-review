@@ -55,9 +55,9 @@ export default function AuthPage() {
             Every line, <span className="text-signal-critical">reviewed</span> before it ships.
           </h1>
           <p className="text-muted text-base max-w-md leading-relaxed">
-            Paste or upload Java source. Redline runs static analysis and an AI
+            Paste or upload Java source. The platform runs static analysis and an AI
             reviewer side by side, then marks every finding right in the margin
-            — the way a senior engineer would redline a pull request.
+            — the way a senior engineer would review a pull request.
           </p>
           <div className="mt-8 space-y-3">
             {[

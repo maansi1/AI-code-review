@@ -5,13 +5,13 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    const stored = localStorage.getItem("redline_user");
+    const stored = localStorage.getItem("aicodereview_user");
     return stored ? JSON.parse(stored) : null;
   });
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("redline_token");
+    const token = localStorage.getItem("aicodereview_token");
     if (!token) {
       setReady(true);
       return;
@@ -20,25 +20,25 @@ export function AuthProvider({ children }) {
       .me()
       .then((data) => {
         setUser(data);
-        localStorage.setItem("redline_user", JSON.stringify(data));
+        localStorage.setItem("aicodereview_user", JSON.stringify(data));
       })
       .catch(() => {
-        localStorage.removeItem("redline_token");
-        localStorage.removeItem("redline_user");
+        localStorage.removeItem("aicodereview_token");
+        localStorage.removeItem("aicodereview_user");
         setUser(null);
       })
       .finally(() => setReady(true));
   }, []);
 
   function persist(authResponse) {
-    localStorage.setItem("redline_token", authResponse.token);
+    localStorage.setItem("aicodereview_token", authResponse.token);
     const userData = {
       userId: authResponse.userId,
       name: authResponse.name,
       email: authResponse.email,
       role: authResponse.role,
     };
-    localStorage.setItem("redline_user", JSON.stringify(userData));
+    localStorage.setItem("aicodereview_user", JSON.stringify(userData));
     setUser(userData);
   }
 
@@ -55,15 +55,15 @@ export function AuthProvider({ children }) {
   }
 
   function logout() {
-    localStorage.removeItem("redline_token");
-    localStorage.removeItem("redline_user");
+    localStorage.removeItem("aicodereview_token");
+    localStorage.removeItem("aicodereview_user");
     setUser(null);
   }
 
   function updateLocalUser(patch) {
     setUser((prev) => {
       const next = { ...prev, ...patch };
-      localStorage.setItem("redline_user", JSON.stringify(next));
+      localStorage.setItem("aicodereview_user", JSON.stringify(next));
       return next;
     });
   }
